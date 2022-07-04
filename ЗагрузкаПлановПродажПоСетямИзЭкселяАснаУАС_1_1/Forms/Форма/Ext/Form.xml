@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.10">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнитьНастройкамиПоУмолчанию" id="125">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьНастройкамиПоУмолчанию</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаполнитьНастройкамиПоУмолчаниюРасширеннаяПодсказка" id="126"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройки" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
+			<CollapsedRepresentationTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки (развернуть)</v8:content>
+				</v8:item>
+			</CollapsedRepresentationTitle>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<UsualGroup name="Группа4" id="74">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="75"/>
+					<ChildItems>
+						<InputField name="НомерСтрокиСЗаголовками" id="71">
+							<DataPath>НомерСтрокиСЗаголовками</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Во входном файле всегда:
+- должна присутствовать шапка таблицы с заголовками колонок
+- все заголовки в этой шапке* должны быть непустыми
+* если точнее, то только в колонках, которые заданы в настройках чтения ниже</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<MinValue xsi:type="xs:decimal">1</MinValue>
+							<ContextMenu name="НомерСтрокиСЗаголовкамиКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="НомерСтрокиСЗаголовкамиРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<InputField name="НачалоПервогоМесяца" id="76">
+							<DataPath>НачалоПервогоМесяца</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Первый месяц (из трех указанных в файле).
+Остальные два месяца вычисляются автоматически.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=ММ.гггг</v8:content>
+								</v8:item>
+							</EditFormat>
+							<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="НачалоПервогоМесяцаКонтекстноеМеню" id="77"/>
+							<ExtendedTooltip name="НачалоПервогоМесяцаРасширеннаяПодсказка" id="78"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНомераКолонок" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номера колонок</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ГруппаНомераКолонокРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<UsualGroup name="Группа5" id="79">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="80"/>
+							<ChildItems>
+								<UsualGroup name="Группа6" id="81">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="82"/>
+									<ChildItems>
+										<UsualGroup name="Группа1" id="59">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="60"/>
+											<ChildItems>
+												<InputField name="НомерКолонки_НаименованиеСклада" id="50">
+													<DataPath>НомерКолонки_НаименованиеСклада</DataPath>
+													<ContextMenu name="НомерКолонки_НаименованиеСкладаКонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="НомерКолонки_НаименованиеСкладаРасширеннаяПодсказка" id="52"/>
+												</InputField>
+												<InputField name="НомерКолонки_НаименованиеВидаПланаПродаж" id="53">
+													<DataPath>НомерКолонки_НаименованиеВидаПланаПродаж</DataPath>
+													<ContextMenu name="НомерКолонки_НаименованиеВидаПланаПродажКонтекстноеМеню" id="54"/>
+													<ExtendedTooltip name="НомерКолонки_НаименованиеВидаПланаПродажРасширеннаяПодсказка" id="55"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Группа2" id="61">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="62"/>
+											<ChildItems>
+												<InputField name="НомерКолонки_ИнтеграционныйКодАптеки" id="38">
+													<DataPath>НомерКолонки_НаименованиеСети</DataPath>
+													<ContextMenu name="НомерКолонки_ИнтеграционныйКодАптекиКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="НомерКолонки_ИнтеграционныйКодАптекиРасширеннаяПодсказка" id="40"/>
+												</InputField>
+												<InputField name="НомерКолонки_КодТовара" id="32">
+													<DataPath>НомерКолонки_КодННТ</DataPath>
+													<ContextMenu name="НомерКолонки_КодТовараКонтекстноеМеню" id="33"/>
+													<ExtendedTooltip name="НомерКолонки_КодТовараРасширеннаяПодсказка" id="34"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа3" id="63">
+									<Group>Vertical</Group>
+									<Representation>StrongSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="64"/>
+									<ChildItems>
+										<InputField name="НомерКолонки_КоличествоМесяц1" id="56">
+											<DataPath>НомерКолонки_КоличествоМесяц1</DataPath>
+											<ContextMenu name="НомерКолонки_КоличествоМесяц1КонтекстноеМеню" id="57"/>
+											<ExtendedTooltip name="НомерКолонки_КоличествоМесяц1РасширеннаяПодсказка" id="58"/>
+										</InputField>
+										<InputField name="НомерКолонки_КоличествоМесяц2" id="65">
+											<DataPath>НомерКолонки_КоличествоМесяц2</DataPath>
+											<ContextMenu name="НомерКолонки_КоличествоМесяц2КонтекстноеМеню" id="66"/>
+											<ExtendedTooltip name="НомерКолонки_КоличествоМесяц2РасширеннаяПодсказка" id="67"/>
+										</InputField>
+										<InputField name="НомерКолонки_КоличествоМесяц3" id="68">
+											<DataPath>НомерКолонки_КоличествоМесяц3</DataPath>
+											<ContextMenu name="НомерКолонки_КоличествоМесяц3КонтекстноеМеню" id="69"/>
+											<ExtendedTooltip name="НомерКолонки_КоличествоМесяц3РасширеннаяПодсказка" id="70"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа12" id="114">
+									<Group>Vertical</Group>
+									<Representation>StrongSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа12РасширеннаяПодсказка" id="115"/>
+									<ChildItems>
+										<InputField name="НомерКолонки_СуммаМесяц1" id="116">
+											<DataPath>НомерКолонки_СуммаМесяц1</DataPath>
+											<ContextMenu name="НомерКолонки_СуммаМесяц1КонтекстноеМеню" id="117"/>
+											<ExtendedTooltip name="НомерКолонки_СуммаМесяц1РасширеннаяПодсказка" id="118"/>
+										</InputField>
+										<InputField name="НомерКолонки_СуммаМесяц2" id="119">
+											<DataPath>НомерКолонки_СуммаМесяц2</DataPath>
+											<ContextMenu name="НомерКолонки_СуммаМесяц2КонтекстноеМеню" id="120"/>
+											<ExtendedTooltip name="НомерКолонки_СуммаМесяц2РасширеннаяПодсказка" id="121"/>
+										</InputField>
+										<InputField name="НомерКолонки_СуммаМесяц3" id="122">
+											<DataPath>НомерКолонки_СуммаМесяц3</DataPath>
+											<ContextMenu name="НомерКолонки_СуммаМесяц3КонтекстноеМеню" id="123"/>
+											<ExtendedTooltip name="НомерКолонки_СуммаМесяц3РасширеннаяПодсказка" id="124"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаИзФайла" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать из файла</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа из файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИзФайлаРасширеннаяПодсказка" id="13"/>
+			<ChildItems>
+				<Button name="ВыбратьИПрочитатьФайл" id="1">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ВыбратьИПрочитатьФайл</CommandName>
+					<ExtendedTooltip name="ВыбратьИПрочитатьФайлРасширеннаяПодсказка" id="2"/>
+				</Button>
+				<InputField name="ПутьКФайлу" id="6">
+					<DataPath>ПутьКФайлу</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="Opening">ПутьКФайлуОткрытие</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЛевоПраво" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа лево право</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа лево право</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЛевоПравоРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛево" id="43">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="44"/>
+					<ChildItems>
+						<UsualGroup name="Группа8" id="88">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="89"/>
+							<ChildItems>
+								<UsualGroup name="Группа9" id="96">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="97"/>
+									<ChildItems>
+										<LabelField name="КоличествоОшибочныхКлючей" id="98">
+											<DataPath>КоличествоОшибокПоиска</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ошибки поиска</v8:content>
+												</v8:item>
+											</Title>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=отсутствуют</v8:content>
+												</v8:item>
+											</Format>
+											<Hiperlink>true</Hiperlink>
+											<ContextMenu name="КоличествоОшибочныхКлючейКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="КоличествоОшибочныхКлючейРасширеннаяПодсказка" id="100"/>
+											<Events>
+												<Event name="Click">КоличествоОшибочныхКлючейНажатие</Event>
+											</Events>
+										</LabelField>
+										<LabelField name="КоличествоОшибокПроверкиДанных" id="90">
+											<DataPath>КоличествоОшибокПроверкиДанных</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Отброшено строк файла</v8:content>
+												</v8:item>
+											</Title>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=</v8:content>
+												</v8:item>
+											</Format>
+											<Hiperlink>true</Hiperlink>
+											<ContextMenu name="КоличествоОшибокПроверкиДанныхКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="КоличествоОшибокПроверкиДанныхРасширеннаяПодсказка" id="92"/>
+											<Events>
+												<Event name="Click">КоличествоОшибокПроверкиДанныхНажатие</Event>
+											</Events>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа10" id="104">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="105"/>
+									<ChildItems>
+										<LabelField name="КоличествоСозданныхДокументов" id="101">
+											<DataPath>КоличествоСозданныхДокументов</DataPath>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=</v8:content>
+												</v8:item>
+											</Format>
+											<ContextMenu name="КоличествоСозданныхДокументовКонтекстноеМеню" id="102"/>
+											<ExtendedTooltip name="КоличествоСозданныхДокументовРасширеннаяПодсказка" id="103"/>
+										</LabelField>
+										<LabelField name="КоличествоОбновленныхДокументов" id="106">
+											<DataPath>КоличествоОбновленныхДокументов</DataPath>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=</v8:content>
+												</v8:item>
+											</Format>
+											<ContextMenu name="КоличествоОбновленныхДокументовКонтекстноеМеню" id="107"/>
+											<ExtendedTooltip name="КоличествоОбновленныхДокументовРасширеннаяПодсказка" id="108"/>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа11" id="109">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа11РасширеннаяПодсказка" id="110"/>
+									<ChildItems>
+										<LabelField name="КоличествоОшибокЗаписиДокументов" id="93">
+											<DataPath>КоличествоОшибокЗаписиДокументов</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ошибки записи документов</v8:content>
+												</v8:item>
+											</Title>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=отсутствуют</v8:content>
+												</v8:item>
+											</Format>
+											<Hiperlink>true</Hiperlink>
+											<ContextMenu name="КоличествоОшибокЗаписиДокументовКонтекстноеМеню" id="94"/>
+											<ExtendedTooltip name="КоличествоОшибокЗаписиДокументовРасширеннаяПодсказка" id="95"/>
+											<Events>
+												<Event name="Click">КоличествоОшибокЗаписиДокументовНажатие</Event>
+											</Events>
+										</LabelField>
+										<LabelDecoration name="ДекорацияОшибокСозданияОбновления" id="111">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>(ошибок создания: 0, ошибок обновления: 0)</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияОшибокСозданияОбновленияКонтекстноеМеню" id="112"/>
+											<ExtendedTooltip name="ДекорацияОшибокСозданияОбновленияРасширеннаяПодсказка" id="113"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа7" id="86">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скрыть протокол</v8:content>
+								</v8:item>
+							</Title>
+							<Behavior>Collapsible</Behavior>
+							<CollapsedRepresentationTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать протокол</v8:content>
+								</v8:item>
+							</CollapsedRepresentationTitle>
+							<Collapsed>true</Collapsed>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="87"/>
+							<ChildItems>
+								<InputField name="Протокол" id="83">
+									<DataPath>Протокол</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ПротоколКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="ПротоколРасширеннаяПодсказка" id="85"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПраво" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="46"/>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ЗагрузкаПлановПродажПоСетямИзЭкселяАснаУАС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:71b45efc-fdd6-4eac-8ed5-2b57d7960804</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ПутьКФайлу" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь к файлу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПутьКФайлу</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="АдресХранилищаФайла" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерКолонки_КодННТ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ННТ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_КодННТ</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_НаименованиеСети" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сеть (наименование)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_НаименованиеСети</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_НаименованиеСклада" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад (наименование)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_НаименованиеСклада</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_НаименованиеВидаПланаПродаж" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид плана продаж (наименование)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_НаименованиеВидаПланаПродаж</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_КоличествоМесяц1" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во (месяц 1)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_КоличествоМесяц1</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_КоличествоМесяц2" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во (месяц 2)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_КоличествоМесяц2</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_КоличествоМесяц3" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во (месяц 3)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_КоличествоМесяц3</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерСтрокиСЗаголовками" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер строки с заголовками</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерСтрокиСЗаголовками</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НачалоПервогоМесяца" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Первый месяц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Протокол" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Протокол</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОшибокПроверкиДанных" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок проверки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОшибокЗаписиДокументов" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок проверки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкиПроверкиДанных" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибки проверки данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкиЗаписиДокументов" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибки записи документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОшибкиПоиска" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибки поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОшибокПоиска" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоСозданныхДокументов" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создано документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОбновленныхДокументов" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновлено документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОшибокОбновления" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок обновления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоОшибокСоздания" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ошибок создания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерКолонки_СуммаМесяц1" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма (месяц 1)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_СуммаМесяц1</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_СуммаМесяц2" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма (месяц 2)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_СуммаМесяц2</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонки_СуммаМесяц3" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма (месяц 3)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+			<Save>
+				<Field>НомерКолонки_СуммаМесяц3</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьИПрочитатьФайл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать и прочитать файл</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыбратьИПрочитатьФайл</Action>
+		</Command>
+		<Command name="ЗаполнитьНастройкамиПоУмолчанию" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить настройками по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить настройками по умолчанию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionStandardSettings</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаполнитьНастройкамиПоУмолчанию</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="НастройкиЧтенияДанных">
+			<Type/>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>
